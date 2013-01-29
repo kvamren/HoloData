@@ -20,7 +20,7 @@ namespace Holo_Data.Structure
 
         internal TreeNode GetNode()
         {
-            return new TreeNode(sender + " til " + mottakerpers + " antall: " + koli + " av " + fraktnr + " sendt: " + GetDateString() + " transportert av: " + transportertav);
+            return new TreeNode(sender + " --> " + mottakerpers + " kolli som sendes: " + koli + " Frakt nr. " + fraktnr + " sendt den: " + GetDateString() + " og transportert av: " + transportertav);
         }
 
         internal string GetDateString()

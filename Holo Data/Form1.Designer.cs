@@ -469,7 +469,6 @@
         private System.Windows.Forms.ToolStripMenuItem fraktbrevToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pakkseddelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nyToolStripMenuItem;
-        private System.Windows.Forms.BindingSource transportBindingSource;
         private System.Windows.Forms.DateTimePicker dateFilter;
         private System.Windows.Forms.TreeView treeBestillinger;
         private System.Windows.Forms.CheckBox chkBedriftSkjekk;
