@@ -89,5 +89,17 @@ namespace Holo_Data.Structure
                 }
             }
         }
+
+        internal Bestilling GetBestilling(string p)
+        {
+            for (int i = 0; i < bestillinger.Count; i++)
+            {
+                if (bestillinger[i].GetNode().Text == p)
+                {
+                    return bestillinger[i];
+                }
+            }
+            return null;
+        }
     }
 }

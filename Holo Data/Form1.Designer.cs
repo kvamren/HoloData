@@ -65,6 +65,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateSendtInput = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTransportor = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numKoli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFraktNr)).BeginInit();
@@ -168,8 +170,9 @@
             // printFraktbrevToolStripMenuItem
             // 
             this.printFraktbrevToolStripMenuItem.Name = "printFraktbrevToolStripMenuItem";
-            this.printFraktbrevToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.printFraktbrevToolStripMenuItem.Text = "Print Fraktbrev";
+            this.printFraktbrevToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.printFraktbrevToolStripMenuItem.Text = "Lag Fraktbrev";
+            this.printFraktbrevToolStripMenuItem.Click += new System.EventHandler(this.printFraktbrevToolStripMenuItem_Click);
             // 
             // printPakkseddelToolStripMenuItem
             // 
@@ -356,7 +359,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 465);
+            this.label6.Location = new System.Drawing.Point(12, 465);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 14;
@@ -364,7 +367,7 @@
             // 
             // dateSendtInput
             // 
-            this.dateSendtInput.Location = new System.Drawing.Point(192, 463);
+            this.dateSendtInput.Location = new System.Drawing.Point(70, 463);
             this.dateSendtInput.Name = "dateSendtInput";
             this.dateSendtInput.Size = new System.Drawing.Size(177, 20);
             this.dateSendtInput.TabIndex = 19;
@@ -378,6 +381,22 @@
             this.button1.Text = "Fjern bedrift";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(253, 465);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(64, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Transportør:";
+            // 
+            // txtTransportor
+            // 
+            this.txtTransportor.Location = new System.Drawing.Point(323, 462);
+            this.txtTransportor.Name = "txtTransportor";
+            this.txtTransportor.Size = new System.Drawing.Size(177, 20);
+            this.txtTransportor.TabIndex = 13;
             // 
             // Form1
             // 
@@ -393,7 +412,9 @@
             this.Controls.Add(this.dateSendtInput);
             this.Controls.Add(this.dateFilter);
             this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtTransportor);
             this.Controls.Add(this.txtMottaker);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtSender);
@@ -459,6 +480,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateSendtInput;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTransportor;
     }
 }
 

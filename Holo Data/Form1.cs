@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Holo_Data.Structure;
 using System.IO;
+using System.Diagnostics;
 
 namespace Holo_Data
 {
@@ -51,6 +52,7 @@ namespace Holo_Data
             best.sendt = dateSendtInput.Value;
             best.sender = txtSender.Text;
             best.mottakerpers = txtMottaker.Text;
+            best.transportertav = txtTransportor.Text;
             if (chkBedriftSkjekk.Checked)
             {
                 bool exists = false;
@@ -249,7 +251,10 @@ namespace Holo_Data
             sd.Filter = "Holo Data File|*.dat";
             sd.AddExtension = true;
             sd.ShowDialog();
-            Save(sd.FileName);
+            if (sd.FileName != "")
+            {
+                Save(sd.FileName);
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -277,6 +282,19 @@ namespace Holo_Data
             foreach (Mottaker m in mottakere)
             {
                 listMottakere.Items.Add(m.navn);
+            }
+        }
+
+        private void printFraktbrevToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Mottaker m in mottakere)
+            {
+                Bestilling b = m.GetBestilling(treeBestillinger.SelectedNode.Text);
+                if (b != null)
+                {
+                    File.WriteAllText("tempfb.txt", b.ToFraktBrev());
+                    Process.Start("tempfb.txt");
+                }
             }
         }
     }
