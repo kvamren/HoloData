@@ -361,15 +361,15 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 465);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Mottaker:";
+            this.label6.Text = "Sendings dato:";
             // 
             // dateSendtInput
             // 
-            this.dateSendtInput.Location = new System.Drawing.Point(70, 463);
+            this.dateSendtInput.Location = new System.Drawing.Point(96, 463);
             this.dateSendtInput.Name = "dateSendtInput";
-            this.dateSendtInput.Size = new System.Drawing.Size(177, 20);
+            this.dateSendtInput.Size = new System.Drawing.Size(178, 20);
             this.dateSendtInput.TabIndex = 19;
             // 
             // button1
@@ -385,7 +385,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(253, 465);
+            this.label7.Location = new System.Drawing.Point(299, 465);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 13);
             this.label7.TabIndex = 14;
@@ -393,7 +393,7 @@
             // 
             // txtTransportor
             // 
-            this.txtTransportor.Location = new System.Drawing.Point(323, 462);
+            this.txtTransportor.Location = new System.Drawing.Point(369, 462);
             this.txtTransportor.Name = "txtTransportor";
             this.txtTransportor.Size = new System.Drawing.Size(177, 20);
             this.txtTransportor.TabIndex = 13;
