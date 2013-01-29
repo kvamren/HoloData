@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLeggtil = new System.Windows.Forms.Button();
+            this.btnFjern = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,50 +48,49 @@
             this.printingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fraktbrevToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pakkseddelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numKoli = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtSender = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMottaker = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.printPreviewControl1 = new System.Windows.Forms.PrintPreviewControl();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.transport = new Holo_Data.Transport();
-            this.transportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dateFilter = new System.Windows.Forms.DateTimePicker();
+            this.treeBestillinger = new System.Windows.Forms.TreeView();
+            this.chkBedriftSkjekk = new System.Windows.Forms.CheckBox();
+            this.numFraktNr = new System.Windows.Forms.NumericUpDown();
+            this.cmbDispSelect = new System.Windows.Forms.ComboBox();
+            this.listMottakere = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateSendtInput = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transport)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numKoli)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFraktNr)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnLeggtil
             // 
-            this.button1.Location = new System.Drawing.Point(388, 444);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Legg til";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLeggtil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLeggtil.Location = new System.Drawing.Point(568, 431);
+            this.btnLeggtil.Name = "btnLeggtil";
+            this.btnLeggtil.Size = new System.Drawing.Size(75, 23);
+            this.btnLeggtil.TabIndex = 0;
+            this.btnLeggtil.Text = "Legg til";
+            this.btnLeggtil.UseVisualStyleBackColor = true;
+            this.btnLeggtil.Click += new System.EventHandler(this.button1_Click);
             // 
-            // monthCalendar1
+            // btnFjern
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 33);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(469, 445);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Fjern";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnFjern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFjern.Location = new System.Drawing.Point(568, 460);
+            this.btnFjern.Name = "btnFjern";
+            this.btnFjern.Size = new System.Drawing.Size(75, 23);
+            this.btnFjern.TabIndex = 2;
+            this.btnFjern.Text = "Fjern";
+            this.btnFjern.UseVisualStyleBackColor = true;
+            this.btnFjern.Click += new System.EventHandler(this.btnFjern_Click);
             // 
             // menuStrip1
             // 
@@ -105,7 +102,7 @@
             this.hjelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(556, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(649, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -123,26 +120,29 @@
             // nyToolStripMenuItem
             // 
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // åpneToolStripMenuItem
             // 
             this.åpneToolStripMenuItem.Name = "åpneToolStripMenuItem";
-            this.åpneToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.åpneToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.åpneToolStripMenuItem.Text = "Åpne";
             // 
             // lagreToolStripMenuItem
             // 
             this.lagreToolStripMenuItem.Name = "lagreToolStripMenuItem";
-            this.lagreToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.lagreToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.lagreToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lagreToolStripMenuItem.Text = "Lagre";
+            this.lagreToolStripMenuItem.Click += new System.EventHandler(this.lagreToolStripMenuItem_Click);
             // 
             // lagreSomToolStripMenuItem
             // 
             this.lagreSomToolStripMenuItem.Name = "lagreSomToolStripMenuItem";
-            this.lagreSomToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.lagreSomToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.lagreSomToolStripMenuItem.Text = "Lagre som...";
+            this.lagreSomToolStripMenuItem.Click += new System.EventHandler(this.lagreSomToolStripMenuItem_Click);
             // 
             // redigerToolStripMenuItem
             // 
@@ -220,27 +220,12 @@
             this.pakkseddelToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.pakkseddelToolStripMenuItem.Text = "Pakkseddel";
             // 
-            // progressBar1
+            // numKoli
             // 
-            this.progressBar1.Location = new System.Drawing.Point(9, 444);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(373, 23);
-            this.progressBar1.TabIndex = 6;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(282, 415);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(36, 415);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(34, 20);
-            this.numericUpDown1.TabIndex = 8;
+            this.numKoli.Location = new System.Drawing.Point(36, 415);
+            this.numKoli.Name = "numKoli";
+            this.numKoli.Size = new System.Drawing.Size(100, 20);
+            this.numKoli.TabIndex = 8;
             // 
             // label1
             // 
@@ -255,105 +240,181 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 417);
+            this.label2.Location = new System.Drawing.Point(375, 418);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Frakt Nr.";
+            this.label2.Text = "Frakt Nr:";
             // 
-            // textBox2
+            // txtSender
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 414);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtSender.Location = new System.Drawing.Point(192, 414);
+            this.txtSender.Name = "txtSender";
+            this.txtSender.Size = new System.Drawing.Size(177, 20);
+            this.txtSender.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 417);
+            this.label3.Location = new System.Drawing.Point(145, 417);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Sender";
+            this.label3.Text = "Sender:";
             // 
-            // textBox3
+            // txtMottaker
             // 
-            this.textBox3.Location = new System.Drawing.Point(443, 414);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtMottaker.Location = new System.Drawing.Point(192, 439);
+            this.txtMottaker.Name = "txtMottaker";
+            this.txtMottaker.Size = new System.Drawing.Size(177, 20);
+            this.txtMottaker.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(388, 417);
+            this.label4.Location = new System.Drawing.Point(137, 442);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 14;
-            this.label4.Text = "Mottaker";
+            this.label4.Text = "Mottaker:";
             // 
-            // printPreviewControl1
+            // dateFilter
             // 
-            this.printPreviewControl1.Location = new System.Drawing.Point(9, 207);
-            this.printPreviewControl1.Name = "printPreviewControl1";
-            this.printPreviewControl1.Size = new System.Drawing.Size(171, 199);
-            this.printPreviewControl1.TabIndex = 16;
+            this.dateFilter.Location = new System.Drawing.Point(12, 33);
+            this.dateFilter.Name = "dateFilter";
+            this.dateFilter.Size = new System.Drawing.Size(177, 20);
+            this.dateFilter.TabIndex = 19;
+            this.dateFilter.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // dataGridView1
+            // treeBestillinger
             // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.transportBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(192, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(321, 354);
-            this.dataGridView1.TabIndex = 17;
+            this.treeBestillinger.AllowDrop = true;
+            this.treeBestillinger.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeBestillinger.Location = new System.Drawing.Point(214, 33);
+            this.treeBestillinger.Name = "treeBestillinger";
+            this.treeBestillinger.Size = new System.Drawing.Size(423, 375);
+            this.treeBestillinger.TabIndex = 20;
+            this.treeBestillinger.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView1_DragDrop);
+            this.treeBestillinger.DragEnter += new System.Windows.Forms.DragEventHandler(this.treeView1_DragEnter);
             // 
-            // transport
+            // chkBedriftSkjekk
             // 
-            this.transport.DataSetName = "Transport";
-            this.transport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.chkBedriftSkjekk.AutoSize = true;
+            this.chkBedriftSkjekk.Location = new System.Drawing.Point(378, 441);
+            this.chkBedriftSkjekk.Name = "chkBedriftSkjekk";
+            this.chkBedriftSkjekk.Size = new System.Drawing.Size(62, 17);
+            this.chkBedriftSkjekk.TabIndex = 21;
+            this.chkBedriftSkjekk.Text = "Bedrift?";
+            this.chkBedriftSkjekk.UseVisualStyleBackColor = true;
             // 
-            // transportBindingSource
+            // numFraktNr
             // 
-            this.transportBindingSource.DataSource = this.transport;
-            this.transportBindingSource.Position = 0;
+            this.numFraktNr.Location = new System.Drawing.Point(429, 415);
+            this.numFraktNr.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numFraktNr.Name = "numFraktNr";
+            this.numFraktNr.Size = new System.Drawing.Size(117, 20);
+            this.numFraktNr.TabIndex = 8;
+            // 
+            // cmbDispSelect
+            // 
+            this.cmbDispSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDispSelect.FormattingEnabled = true;
+            this.cmbDispSelect.Items.AddRange(new object[] {
+            "Dag",
+            "Måned",
+            "År"});
+            this.cmbDispSelect.Location = new System.Drawing.Point(12, 59);
+            this.cmbDispSelect.Name = "cmbDispSelect";
+            this.cmbDispSelect.Size = new System.Drawing.Size(177, 21);
+            this.cmbDispSelect.TabIndex = 22;
+            this.cmbDispSelect.SelectedIndexChanged += new System.EventHandler(this.cmbDispSelect_SelectedIndexChanged);
+            // 
+            // listMottakere
+            // 
+            this.listMottakere.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listMottakere.FormattingEnabled = true;
+            this.listMottakere.ItemHeight = 15;
+            this.listMottakere.Location = new System.Drawing.Point(12, 112);
+            this.listMottakere.Name = "listMottakere";
+            this.listMottakere.Size = new System.Drawing.Size(177, 259);
+            this.listMottakere.TabIndex = 23;
+            this.listMottakere.SelectedIndexChanged += new System.EventHandler(this.listMottakere_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Mottakere";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(134, 465);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Mottaker:";
+            // 
+            // dateSendtInput
+            // 
+            this.dateSendtInput.Location = new System.Drawing.Point(192, 463);
+            this.dateSendtInput.Name = "dateSendtInput";
+            this.dateSendtInput.Size = new System.Drawing.Size(177, 20);
+            this.dateSendtInput.TabIndex = 19;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(15, 377);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(171, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Fjern bedrift";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 480);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.printPreviewControl1);
+            this.ClientSize = new System.Drawing.Size(649, 490);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.listMottakere);
+            this.Controls.Add(this.cmbDispSelect);
+            this.Controls.Add(this.chkBedriftSkjekk);
+            this.Controls.Add(this.treeBestillinger);
+            this.Controls.Add(this.dateSendtInput);
+            this.Controls.Add(this.dateFilter);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtMottaker);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtSender);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.numFraktNr);
+            this.Controls.Add(this.numKoli);
+            this.Controls.Add(this.btnFjern);
+            this.Controls.Add(this.btnLeggtil);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Holo Data";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transport)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numKoli)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numFraktNr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,9 +422,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLeggtil;
+        private System.Windows.Forms.Button btnFjern;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem filToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem åpneToolStripMenuItem;
@@ -372,14 +432,12 @@
         private System.Windows.Forms.ToolStripMenuItem redigerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem angreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gjørOmToolStripMenuItem;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numKoli;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtSender;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMottaker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem printFraktbrevToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem printPakkseddelToolStripMenuItem;
@@ -389,11 +447,18 @@
         private System.Windows.Forms.ToolStripMenuItem printingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fraktbrevToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pakkseddelToolStripMenuItem;
-        private System.Windows.Forms.PrintPreviewControl printPreviewControl1;
         private System.Windows.Forms.ToolStripMenuItem nyToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource transportBindingSource;
-        private Transport transport;
+        private System.Windows.Forms.DateTimePicker dateFilter;
+        private System.Windows.Forms.TreeView treeBestillinger;
+        private System.Windows.Forms.CheckBox chkBedriftSkjekk;
+        private System.Windows.Forms.NumericUpDown numFraktNr;
+        private System.Windows.Forms.ComboBox cmbDispSelect;
+        private System.Windows.Forms.ListBox listMottakere;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dateSendtInput;
+        private System.Windows.Forms.Button button1;
     }
 }
 
